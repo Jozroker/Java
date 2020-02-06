@@ -11,9 +11,14 @@ public class Main {
         System.out.print("Input b: ");
         int b = sc.nextInt();
 
-        Methods.add(a, b);
-        Methods.subtraction(a, b);
-        Methods.multiply(a, b);
-        Methods.devide(a, b);
+        try {
+            Methods.add(a, b);
+            Methods.subtraction(a, b);
+            Methods.multiply(a, b);
+            Methods.devide(a, b);
+        } catch (MyException | ArithmeticException | IllegalArgumentException e){
+            System.out.println(e.getMessage());
+        }
+
     }
 }
