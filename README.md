@@ -8,3 +8,4 @@
 * [lesson-07](https://github.com/Jozroker/Java/tree/lesson-07)  (ООП: SOLID принципи)
 * [lesson-08](https://github.com/Jozroker/Java/tree/lesson-08)  (ООП: Enum, консольна програма)
 * [lesson-09](https://github.com/Jozroker/Java/tree/lesson-09)  (Exception, Java code convention)
+* [lesson-10](https://github.com/Jozroker/Java/tree/lesson-10)  (String)
