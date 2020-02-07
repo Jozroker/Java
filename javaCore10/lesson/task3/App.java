@@ -12,7 +12,10 @@ public class App {
             if (sentence[i] == ' ') {
                 count++;
             }
+            if (sentence[i] == '-') {
+                count--;
+            }
         }
-        System.out.println("Sentence has "+count+" words");
+        System.out.println("Sentence has " + count + " words");
     }
 }
