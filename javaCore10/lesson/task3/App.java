@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        int count = 0;
+        int count = 1;
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter sentence:");
         char[] sentence = sc.nextLine().trim().toCharArray();
@@ -13,7 +13,6 @@ public class App {
                 count++;
             }
         }
-        count++;
         System.out.println("Sentence has "+count+" words");
     }
 }
