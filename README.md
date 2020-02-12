@@ -10,3 +10,4 @@
 * [lesson-09](https://github.com/Jozroker/Java/tree/lesson-09)  (Exception, Java code convention)
 * [lesson-10](https://github.com/Jozroker/Java/tree/lesson-10)  (String)
 * [lesson-11](https://github.com/Jozroker/Java/tree/lesson-11)  (Arrays, Collections)
+* [lesson-12](https://github.com/Jozroker/Java/tree/lesson-12)  (List)
