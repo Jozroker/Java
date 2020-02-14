@@ -15,14 +15,14 @@ public class Main {
         System.out.println("Enter month - press 0");
         System.out.println("Check month value - press 1");
         System.out.println("Return months of similar season - press 2");
-        System.out.println("Check month value - press 3");
-        System.out.println("Check month value - press 4");
-        System.out.println("Check month value - press 5");
-        System.out.println("Check month value - press 6");
-        System.out.println("Check month value - press 7");
-        System.out.println("Check month value - press 8");
-        System.out.println("Check month value - press 9");
-        System.out.println("Check month value - press 10");
+        System.out.println("Check month with same quantity of days - press 3");
+        System.out.println("Check month with less quantity of days - press 4");
+        System.out.println("Check month with more quantity of days - press 5");
+        System.out.println("Check next season - press 6");
+        System.out.println("Check previous season - press 7");
+        System.out.println("Check all months with pair quantity of days - press 8");
+        System.out.println("Check all months with not pair quantity of days - press 9");
+        System.out.println("Check this month to pair quantity of days - press 10");
         System.out.println("Quit - press 11");
 
 
