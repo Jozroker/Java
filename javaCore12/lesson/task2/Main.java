@@ -1,6 +1,5 @@
 package mainPackage.javaCore12.lesson.task2;
 
-import java.sql.Array;
 import java.util.*;
 
 public class Main {
@@ -8,13 +7,13 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         Month month = null;
         boolean value = true;
-        List<Season> seasons = new ArrayList<Season>();
+        List<Season> seasons = new ArrayList<>();
         seasons.add(new Season("WINTER"));
         seasons.add(new Season("SPRING"));
         seasons.add(new Season("SUMMER"));
         seasons.add(new Season("OUTUMN"));
 
-        List<Month> months = new ArrayList<Month>();
+        List<Month> months = new ArrayList<>();
         months.add(new Month(31, "JANUARY", seasons.get(0)));
         months.add(new Month(29, "FEBRUARY", seasons.get(0)));
         months.add(new Month(31, "MARCH", seasons.get(1)));
