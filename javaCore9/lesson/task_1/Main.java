@@ -190,9 +190,9 @@ public class Main {
                             throw monthException;
                         } else {
                             if (month.getDay() % 2 == 0) {
-                                System.out.println("Month " + month.name() + " nave pair quantity of days: " + month.getDay());
+                                System.out.println("Month " + month.name() + " have pair quantity of days: " + month.getDay());
                             } else {
-                                System.out.println("Month " + month.name() + " nave not pair quantity of days: " + month.getDay());
+                                System.out.println("Month " + month.name() + " have not pair quantity of days: " + month.getDay());
                             }
                         }
                         System.out.println("-----");
