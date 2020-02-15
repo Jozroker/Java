@@ -9,3 +9,7 @@
 * [lesson-08](https://github.com/Jozroker/Java/tree/lesson-08)  (ООП: Enum, консольна програма)
 * [lesson-09](https://github.com/Jozroker/Java/tree/lesson-09)  (Exception, Java code convention)
 * [lesson-10](https://github.com/Jozroker/Java/tree/lesson-10)  (String)
+* [lesson-11](https://github.com/Jozroker/Java/tree/lesson-11)  (Arrays, Collections)
+* [lesson-12](https://github.com/Jozroker/Java/tree/lesson-12)  (List)
+* [lesson-13](https://github.com/Jozroker/Java/tree/lesson-13)  (Sorting, Comparator, Comparable)
+* [lesson-14](https://github.com/Jozroker/Java/tree/lesson-14)  (Set, Queue)
