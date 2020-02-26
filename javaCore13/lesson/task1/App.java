@@ -25,8 +25,7 @@ public class App {
         System.out.println("0 - Exit");
         while(bool) {
             try {
-                int value = sc.nextInt();
-                switch (value) {
+                switch (sc.nextInt()) {
                     case 0:
                         bool = false;
                         break;
@@ -68,6 +67,7 @@ public class App {
                 System.out.println("==========================\n");
             } catch (InputMismatchException e) {
                 System.out.println("Incorrect type of value");
+                sc.next();
             }
         }
     }
