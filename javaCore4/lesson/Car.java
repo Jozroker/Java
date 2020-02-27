@@ -10,7 +10,8 @@ public class Car {
     private int wheelsQuantity = 4;
     private Helm helm;
     private CarBody body;
-    private String[] carWheels = new String[wheels.length];
+    private StringBuilder carWheels = new StringBuilder();
+//    private String[] carWheels = new String[wheels.length];
 
     public Car(){};
 
@@ -29,11 +30,22 @@ public class Car {
         this.body = body;
     }
 
+//    public String getWheels(){
+//        for (int i = 0; i < carWheels.length; i++){
+//            carWheels[i] = "Disk Diameter = " + wheels[i].getDiskDiameter() +
+//                    " Tire Diameter = " + wheels[i].getTireDiameter() +
+//                    " Position = " + wheels[i].getPosition();
+//        }
+//        return "Car wheels: "+ Arrays.toString(carWheels);
+//    }
+
     public String getWheels(){
-        for (int i = 0; i < carWheels.length; i++){
-            carWheels[i] = "Disk Diameter = " + Integer.toString(wheels[i].getDiskDiameter()) + " Tire Diameter = " + Integer.toString(wheels[i].getTireDiameter()) + " Position = " + wheels[i].getPosition();
+        for (int i = 0; i < wheels.length; i++) {
+            carWheels.append("Disk Diameter = " + wheels[i].getDiskDiameter() +
+                    " Tire Diameter = " + wheels[i].getTireDiameter() +
+                    " Position = " + wheels[i].getPosition());
         }
-        return "Car wheels: "+ Arrays.toString(carWheels);
+        return "Car wheels: " + carWheels;
     }
 
     public void start(){
@@ -46,7 +58,7 @@ public class Car {
                 "brand='" + brand + '\'' + ", \n" +
                 "model='" + model + '\'' + ", \n" +
                 "color='" + color + '\'' + ", \n" +
-                "wheels=" + Arrays.toString(carWheels) + ", \n" +
+                "wheels=[" + carWheels + "], \n" +
                 "wheelsQuantity=" + wheelsQuantity + ", \n" +
                 "helm=" + helm.toString() + ", \n" +
                 "body=" + body.toString() +
