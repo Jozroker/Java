@@ -29,9 +29,9 @@ public class Rectangle {
 
     @Override
     public String toString() {
-        return "Площа прямокутника = " +
+        return "Rectangle square = " +
                  area +
-                "\nПериметр прямокутника = " + perimeter;
+                "\nRectangle perimeter = " + perimeter;
     }
 }
 

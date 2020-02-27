@@ -26,7 +26,7 @@ public class Circle {
 
     @Override
     public String toString() {
-        return "Площа кола = " + area +
-                "\nДовжина кола = " + length;
+        return "Circle square = " + area +
+                "\nCircle length = " + length;
     }
 }
