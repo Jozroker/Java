@@ -1,19 +1,18 @@
 package mainPackage.javaCore5.lesson.task2;
 import java.util.Random;
 public class Coin {
-    private int value;
+    private boolean value;
     private Random ran = new Random();
 
     public void setValue(){
-        int random = ran.nextInt(2);
-        this.value = random;
+        this.value = ran.nextBoolean();
     }
 
     public void getValue(){
-        if (value == 0){
+        if (value){
             System.out.println("Орел");
         }
-        else if (value == 1){
+        else if (value){
             System.out.println("Решка");
         }
         else {
