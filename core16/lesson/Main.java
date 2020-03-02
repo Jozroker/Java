@@ -4,7 +4,9 @@ import java.lang.reflect.*;
 import java.util.Arrays;
 
 public class Main {
+
     public static void main(String[] args) {
+
         Dog someDog = new Pitbul("Pit", 4, "white");
         System.out.println(someDog.toString());
         System.out.println("Class: " + someDog.getClass());
@@ -20,6 +22,7 @@ public class Main {
         System.out.println("Interfaces: " + Arrays.toString(someDog.getClass().getInterfaces()));
         System.out.println("Classes: " + Arrays.toString(someDog.getClass().getClasses()));
         System.out.println("Methods: " + Arrays.toString(someDog.getClass().getMethods()));
+
         try {
             System.out.println();
             Field field = someDog.getClass().getDeclaredField("color");
@@ -39,6 +42,20 @@ public class Main {
             System.out.println("Is local class: " + someDog.getClass().isLocalClass());
             System.out.println();
 
+            System.out.println(someDog.toString());
+//            field.set(someDog, "black"); not access to field
+            field.setAccessible(true);
+            field.set(someDog, "black");
+            System.out.println(someDog.toString());
+
+            Method voice = someDog.getClass().getMethod("voice");
+            voice.invoke(someDog);
+
+            Method go = someDog.getClass().getMethod("go", int.class, String.class);
+            Method go1 = someDog.getClass().getMethod("go", int.class);
+            go1.invoke(someDog, 54);
+            System.out.println();
+            go.invoke(someDog, 54, "left");
         } catch (Exception e) {
             e.printStackTrace();
         }
