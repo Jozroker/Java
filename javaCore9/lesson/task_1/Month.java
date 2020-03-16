@@ -9,9 +9,9 @@ public enum Month {
     JUNE(30, Season.SUMMER),
     JULY(31, Season.SUMMER),
     AUGUST(31, Season.SUMMER),
-    SEPTEMBER(30, Season.OUTUMN),
-    OCTOBER(31, Season.OUTUMN),
-    NOVEMBER(30, Season.OUTUMN),
+    SEPTEMBER(30, Season.AUTUMN),
+    OCTOBER(31, Season.AUTUMN),
+    NOVEMBER(30, Season.AUTUMN),
     DECEMBER(31, Season.WINTER);
 
     private int day;
