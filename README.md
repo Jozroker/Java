@@ -15,5 +15,5 @@
 * [lesson-14](https://github.com/Jozroker/Java/tree/lesson-14)  (Set, Queue)
 * [lesson-15](https://github.com/Jozroker/Java/tree/lesson-15)  (Map)
 * [lesson-16](https://github.com/Jozroker/Java/tree/lesson-16)  (Reflection)
-* [lesson-17](https://github.com/itacademylogos/Java_Core/tree/lesson-17)  (Внутрішні класи / Inner classes)
-* [lesson-18](https://github.com/itacademylogos/Java_Core/tree/lesson-18)  (Параметризовані типи / Generics)
+* [lesson-17](https://github.com/Jozroker/Java/tree/lesson-17)  (Внутрішні класи / Inner classes)
+* [lesson-18](https://github.com/Jozroker/Java/tree/lesson-18)  (Параметризовані типи / Generics)
