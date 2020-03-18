@@ -1,17 +1,24 @@
-# Java Core 
+Створити інтерфейс Iterator, в якому оголосити метод hasNext(), next(). Створити клас Collection,в якого оголосити як поле масив типу Number. Створити конструктор з визначеними параметрами куди передати даний масив. Створити два внутрішніх класи, які імплементуватимуть інтерфейс Iterator.
 
-* [lesson-01](https://github.com/Jozroker/Java/tree/lesson-01)  (JVM, обгортки примітивів, базові конструкції Java)
-* [lesson-03](https://github.com/Jozroker/Java/tree/lesson-03)  (Основи ООП)
-* [lesson-04](https://github.com/Jozroker/Java/tree/lesson-04)  (ООП: наслідування, композиція)
-* [lesson-05](https://github.com/Jozroker/Java/tree/lesson-05)  (ООП: Абстрактний клас, модифікатор final та static)
-* [lesson-06](https://github.com/Jozroker/Java/tree/lesson-06)  (ООП: Інтерфейс, default та static методи)
-* [lesson-07](https://github.com/Jozroker/Java/tree/lesson-07)  (ООП: SOLID принципи)
-* [lesson-08](https://github.com/Jozroker/Java/tree/lesson-08)  (ООП: Enum, консольна програма)
-* [lesson-09](https://github.com/Jozroker/Java/tree/lesson-09)  (Exception, Java code convention)
-* [lesson-10](https://github.com/Jozroker/Java/tree/lesson-10)  (String)
-* [lesson-11](https://github.com/Jozroker/Java/tree/lesson-11)  (Arrays, Collections)
-* [lesson-12](https://github.com/Jozroker/Java/tree/lesson-12)  (List)
-* [lesson-13](https://github.com/Jozroker/Java/tree/lesson-13)  (Sorting, Comparator, Comparable)
-* [lesson-14](https://github.com/Jozroker/Java/tree/lesson-14)  (Set, Queue)
-* [lesson-15](https://github.com/Jozroker/Java/tree/lesson-15)  (Map)
-* [lesson-16](https://github.com/Jozroker/Java/tree/lesson-16)  (Reflection)
+Мінімум:
+
+Перевизначити методи так щоб:
+
+1.Першого класу виводили значення масиву від першого до останнього. 
+Зробити заміну непарних елементів на нуль і вивести на екран даний масив.
+
+2.Другого класу виводили від останнього до першого значення через одну цифру. 
+
+Максимум:
+
+3.Створити анонімний клас який повинен : прогнати від останнього до першого елементу масиву. 
+Перевірити кожен третій елемент масиву від останнього чи він непарний, 
+якщо так то вивести дані елементи на консоль. 
+
+4.Створити Локальний клас який повинен: пройтись від першого до останнього елементу масиву, 
+перевірити кожен п’ятий елемент масиву, якщо він парний то відняти від нього число 100, 
+і вивести на консоль ці числа. 
+
+5.Створити статичний клас який повинен: пройтись від першого до останнього елемента масиву. 
+Перевірити кожен другий елемент масив на парність, якщо він парний, 
+тоді зробити з нього непарний і вивести дані елементи на консоль.
