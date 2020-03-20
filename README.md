@@ -17,3 +17,4 @@
 * [lesson-16](https://github.com/Jozroker/Java/tree/lesson-16)  (Reflection)
 * [lesson-17](https://github.com/Jozroker/Java/tree/lesson-17)  (Внутрішні класи / Inner classes)
 * [lesson-18](https://github.com/Jozroker/Java/tree/lesson-18)  (Параметризовані типи / Generics)
+* [lesson-19](https://github.com/Jozroker/Java/tree/lesson-19)  (Input/Output)
