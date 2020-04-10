@@ -45,7 +45,8 @@ public class Fraction {
         String fname = sc.nextLine();
         System.out.print("Enter lastname: ");
         String lname = sc.nextLine();
-        if (fraction.stream().noneMatch(delegate -> delegate.getFirstname().equals(fname) && delegate.getLastname().equals(lname))) {
+        if (fraction.stream()
+                .noneMatch(delegate -> delegate.getFirstname().equals(fname) && delegate.getLastname().equals(lname))) {
             System.out.println("Fraction " + this.name + " hasn't such delegate");
         } else {
             fraction.removeIf(delegate -> delegate.getFirstname().equals(fname) && delegate.getLastname().equals(lname));
@@ -62,12 +63,18 @@ public class Fraction {
         if (fraction.stream().noneMatch(Delegate::isBriber)) {
             System.out.println("Fraction hasn't bribers");
         } else {
-            fraction.stream().filter(Delegate::isBriber).collect(Collectors.toList()).forEach(System.out::println);
+            fraction.stream()
+                    .filter(Delegate::isBriber)
+                    .collect(Collectors.toList())
+                    .forEach(System.out::println);
         }
     }
 
     public Delegate showBiggestBriber() {
-        return fraction.stream().filter(Delegate::isBriber).max((e1, e2) -> (int) (e1.getBribeValue() - e2.getBribeValue())).orElse(null);
+        return fraction.stream()
+                .filter(Delegate::isBriber)
+                .max((e1, e2) -> (int) (e1.getBribeValue() - e2.getBribeValue()))
+                .orElse(null);
     }
 
     public void showAllDelegates() {

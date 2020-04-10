@@ -2,7 +2,6 @@ package mainPackage.core23.lesson.task1;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.Scanner;
 
 public class DelegateCouncilSingleton {
@@ -19,7 +18,8 @@ public class DelegateCouncilSingleton {
     public void removeFraction() {
         System.out.print("Enter fraction name: ");
         String name = sc.next();
-        if (council.stream().noneMatch(fraction -> fraction.getName().equals(name))) {
+        if (council.stream()
+                .noneMatch(fraction -> fraction.getName().equals(name))) {
             System.out.println("Council hasn't such fraction");
         } else {
             council.removeIf(fraction -> fraction.getName().equals(name));
@@ -36,7 +36,8 @@ public class DelegateCouncilSingleton {
     public void showFraction() {
         System.out.println("Enter fraction name: ");
         String name = sc.next();
-        if (council.stream().noneMatch(fraction -> fraction.getName().equals(name))) {
+        if (council.stream()
+                .noneMatch(fraction -> fraction.getName().equals(name))) {
             System.out.println("Council hasn't such fraction");
         } else {
             council.forEach(fraction -> {
@@ -51,7 +52,8 @@ public class DelegateCouncilSingleton {
     public void addDelegateToFraction() {
         System.out.print("Enter fraction name: ");
         String name = sc.next();
-        if (council.stream().noneMatch(fraction -> fraction.getName().equals(name))) {
+        if (council.stream()
+                .noneMatch(fraction -> fraction.getName().equals(name))) {
             System.out.println("Council hasn't such fraction");
         } else {
             council.forEach(fraction -> {
@@ -65,7 +67,8 @@ public class DelegateCouncilSingleton {
     public void removeDelegateFromFraction() {
         System.out.print("Enter fraction name: ");
         String name = sc.next();
-        if (council.stream().noneMatch(fraction -> fraction.getName().equals(name))) {
+        if (council.stream()
+                .noneMatch(fraction -> fraction.getName().equals(name))) {
             System.out.println("Council hasn't such fraction");
         } else {
             council.forEach(fraction -> {
@@ -89,7 +92,9 @@ public class DelegateCouncilSingleton {
         council.forEach(fraction -> {
             bribers.add(fraction.showBiggestBriber());
         });
-        Delegate biggestBriber = bribers.stream().max((d1, d2) -> (int) (d1.getBribeValue() - d2.getBribeValue())).orElse(null);
+        Delegate biggestBriber = bribers.stream()
+                .max((d1, d2) -> (int) (d1.getBribeValue() - d2.getBribeValue()))
+                .orElse(null);
         System.out.println(biggestBriber.toString());
         council.forEach(fraction -> {
             fraction.getFraction().forEach(delegate -> {
