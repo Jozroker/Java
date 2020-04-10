@@ -20,3 +20,5 @@
 * [lesson-19](https://github.com/Jozroker/Java/tree/lesson-19)  (Input/Output)
 * [lesson-20](https://github.com/Jozroker/Java/tree/lesson-20)  (Threads)
 * [lesson-21](https://github.com/Jozroker/Java/tree/lesson-21)  (Annotation. DateTime)
+* [lesson-22](https://github.com/Jozroker/Java/tree/lesson-22)  (Lambda, Optional)
+* [lesson-23](https://github.com/Jozroker/Java/tree/lesson-23)  (Stream API)
