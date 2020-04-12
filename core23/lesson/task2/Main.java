@@ -30,7 +30,11 @@ public class Main {
                     club.removeMemberPet();
                     break;
                 case 4:
+                    club.removeMember();
+                    break;
                 case 5:
+                    club.removePetFromAllMembers();
+                    break;
                 case 6:
                     System.out.println(club.toString());
                     break;
