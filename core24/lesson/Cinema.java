@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.stream.Collectors;
 
 public class Cinema {
 
@@ -11,6 +12,11 @@ public class Cinema {
     private List<Movie> moviesLibrary = new ArrayList<>();
     private Time open;
     private Time close;
+
+    public Cinema(Time open, Time close) {
+        this.open = open;
+        this.close = close;
+    }
 
     public void addMovie(Movie movie) {
         if (moviesLibrary.contains(movie)) {
@@ -36,7 +42,7 @@ public class Cinema {
         schedules.values().forEach(schedule -> schedule.getSeances().removeIf(seance -> seance.getMovie().equals(movie)));
     }
 
-    private void removeSeance(Seance seance, String day) {
+    public void removeSeance(Seance seance, String day) {
         schedules.forEach((key, value) -> {
             if (key.equals(day.toUpperCase())) {
                 value.removeSeance(seance);
@@ -44,13 +50,29 @@ public class Cinema {
         });
     }
 
+    public String showCinemaLibrary() {
+        return "Movies:" +
+                moviesLibrary.stream()
+                        .map(elem -> "    " + elem.toString())
+                        .collect(Collectors.joining("\n"));
+    }
+
     @Override
     public String toString() {
-        return "Cinema{\n" +
-                "   Schedules: " + schedules.entrySet().stream().map() +
-                ", moviesLibrary=" + moviesLibrary +
-                ", open=" + open +
-                ", close=" + close +
-                '}';
+        if (schedules.isEmpty()) {
+            return "Cinema hasn't active seances";
+        } else {
+            return "Cinema{\n" +
+                    "   Schedules:\n" + schedules
+                    .entrySet()
+                    .stream()
+                    .map(elem -> {
+                return "        " + elem.getKey().toString() + "-> Schedule: " + elem.getValue().toString();
+            })
+                    .collect(Collectors.joining("\n")) +
+                    ", open=" + open +
+                    ", close=" + close +
+                    '}';
+        }
     }
 }

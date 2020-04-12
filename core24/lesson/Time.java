@@ -8,7 +8,7 @@ public class Time {
     private int hour;
 
     public Time(int hour, int min) {
-        if ((min < 0 && min >= 60) || (hour < 0 && hour >= 24)) {
+        if ((min < 0 || min >= 60) || (hour < 0 || hour >= 24)) {
             System.out.println("Incorrect time value");
         } else {
             this.min = min;
