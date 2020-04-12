@@ -31,5 +31,26 @@ public class Cinema {
         });
     }
 
-    public void
+    public void removeMovie(Movie movie) {
+        moviesLibrary.remove(movie);
+        schedules.values().forEach(schedule -> schedule.getSeances().removeIf(seance -> seance.getMovie().equals(movie)));
+    }
+
+    private void removeSeance(Seance seance, String day) {
+        schedules.forEach((key, value) -> {
+            if (key.equals(day.toUpperCase())) {
+                value.removeSeance(seance);
+            }
+        });
+    }
+
+    @Override
+    public String toString() {
+        return "Cinema{\n" +
+                "   Schedules: " + schedules.entrySet().stream().map() +
+                ", moviesLibrary=" + moviesLibrary +
+                ", open=" + open +
+                ", close=" + close +
+                '}';
+    }
 }

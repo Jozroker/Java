@@ -1,7 +1,5 @@
 package mainPackage.core24.lesson;
 
-import java.util.Comparator;
-
 public class Seance implements Comparable<Seance>{
 
     private Movie movie;

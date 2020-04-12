@@ -2,6 +2,7 @@ package mainPackage.core24.lesson;
 
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.stream.Collectors;
 
 public class Schedule {
 
@@ -22,7 +23,7 @@ public class Schedule {
     @Override
     public String toString() {
         return "Schedule{" +
-                seances.stream().map(Seance::toString) +
+                seances.stream().map(Seance::toString).collect(Collectors.joining("\n")) +
                 '}';
     }
 }
