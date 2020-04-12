@@ -1,25 +1,25 @@
-# Java Core 
+Проект кінотеатр.
+Створити класи: Time, Movie, Seance, Schedule, Cinema. В enum Days:
+- прописати дні тижня; В Time:
+- поля int min, int hour;
+- передбачити межі для їх значень (для min 0..60, для hour 0..24);
+В Movie:
+-поля String title, Time duration; В Seance:
+- поля Movie movie, Time startTime, Time endTime;
+- в конструктор має надходити параметрами значення для перших двох полів, третє поле повинне обчислюватись (startTime + movie.duration);
+В Schedule:
+- поле Set<Seance> seances = new TreeSet<>();
+- методи: addSeance (Seance), removeSeance (Seance);
 
-* [lesson-01](https://github.com/Jozroker/Java/tree/lesson-01)  (JVM, обгортки примітивів, базові конструкції Java)
-* [lesson-03](https://github.com/Jozroker/Java/tree/lesson-03)  (Основи ООП)
-* [lesson-04](https://github.com/Jozroker/Java/tree/lesson-04)  (ООП: наслідування, композиція)
-* [lesson-05](https://github.com/Jozroker/Java/tree/lesson-05)  (ООП: Абстрактний клас, модифікатор final та static)
-* [lesson-06](https://github.com/Jozroker/Java/tree/lesson-06)  (ООП: Інтерфейс, default та static методи)
-* [lesson-07](https://github.com/Jozroker/Java/tree/lesson-07)  (ООП: SOLID принципи)
-* [lesson-08](https://github.com/Jozroker/Java/tree/lesson-08)  (ООП: Enum, консольна програма)
-* [lesson-09](https://github.com/Jozroker/Java/tree/lesson-09)  (Exception, Java code convention)
-* [lesson-10](https://github.com/Jozroker/Java/tree/lesson-10)  (String)
-* [lesson-11](https://github.com/Jozroker/Java/tree/lesson-11)  (Arrays, Collections)
-* [lesson-12](https://github.com/Jozroker/Java/tree/lesson-12)  (List)
-* [lesson-13](https://github.com/Jozroker/Java/tree/lesson-13)  (Sorting, Comparator, Comparable)
-* [lesson-14](https://github.com/Jozroker/Java/tree/lesson-14)  (Set, Queue)
-* [lesson-15](https://github.com/Jozroker/Java/tree/lesson-15)  (Map)
-* [lesson-16](https://github.com/Jozroker/Java/tree/lesson-16)  (Reflection)
-* [lesson-17](https://github.com/Jozroker/Java/tree/lesson-17)  (Внутрішні класи / Inner classes)
-* [lesson-18](https://github.com/Jozroker/Java/tree/lesson-18)  (Параметризовані типи / Generics)
-* [lesson-19](https://github.com/Jozroker/Java/tree/lesson-19)  (Input/Output)
-* [lesson-20](https://github.com/Jozroker/Java/tree/lesson-20)  (Threads)
-* [lesson-21](https://github.com/Jozroker/Java/tree/lesson-21)  (Annotation. DateTime)
-* [lesson-22](https://github.com/Jozroker/Java/tree/lesson-22)  (Lambda, Optional)
-* [lesson-23](https://github.com/Jozroker/Java/tree/lesson-23)  (Stream API)
-* [lesson-24](https://github.com/Jozroker/Java/tree/lesson-24)  (Best practice)
+В Cinema:
+- поля:
+TreeMap<Days, Schedule> schedules,
+ArrayList<Movie> moviesLibrary = new ArrayList<>(); 
+Time open, Time close; - врахувати час відкриття і закриття при формуванні сеансів!
+- методи:
+addMovie (Movie, Time...time)  - додає фільм в фільмотеку moviesLibrary,
+addSeance (Seance, String) - додає сеанс фільму в розклад (schedules), в конкретний день, який задається параметром String 
+removeMovie(Movie) - повністю видаляє фільм з фільмотеки і розкладу, якщо був запланований
+removeSeance (Seance, String)  - видаляє конкретний сеанс фільму в конкретний день, який задається параметром String 
+
+В класі Main: - створити об'єкт Cinema; - реалізувати меню, в якому виконується весь функціонал Cinema. Для кожного класу зробити адекватний toString, щоб все було читабельно і доступно. Супроводжуючі повідомлення і тому подібне. Там де потрібно, зробити compareTo(). Маєте якісь власні ідеї для розробки - будь-ласка. Це моделювання роботи кінотеатру, тому все що наблизить програму до реальності вітається. 
