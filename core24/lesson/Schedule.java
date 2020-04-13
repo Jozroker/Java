@@ -22,6 +22,6 @@ public class Schedule {
 
     @Override
     public String toString() {
-        return "            " + seances.stream().map(Seance::toString).collect(Collectors.joining("\n           "));
+        return seances.stream().map(Seance::toString).collect(Collectors.joining("\n                             "));
     }
 }

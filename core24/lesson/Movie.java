@@ -25,17 +25,17 @@ public class Movie {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Movie movie = (Movie) o;
-        return Objects.equals(title, movie.title) &&
-                Objects.equals(duration, movie.duration);
+        return Objects.equals(title, movie.title);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(title, duration);
+        return Objects.hash(title);
     }
 
     @Override
     public String toString() {
-        return "\"" + title + "\"";
+        return "Name: \"" + title + "\", " +
+                "Duration: " + duration.toString() + ";";
     }
 }

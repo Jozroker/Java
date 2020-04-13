@@ -1,6 +1,7 @@
 package mainPackage.core24.lesson;
 
 import java.text.DecimalFormat;
+import java.util.Optional;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
@@ -22,36 +23,117 @@ public class Main {
             System.out.print("Enter operation number: ");
             int operation = sc.nextInt();
             sc.nextLine();
-            switch (operation) {
-                case 1:
-                    System.out.print("Enter movie name: ");
-                    String name = sc.nextLine();
-                    System.out.print("Enter movie duration(hh:mm): ");
-                    String time = sc.next();
-                    while (true) {
-                        if ((time.length() == 5) && time.indexOf(":") == 2) {
-                            break;
+            try {
+                switch (operation) {
+                    case 1:
+                        System.out.print("Enter movie name: ");
+                        String name = sc.nextLine();
+                        System.out.println("Enter movie duration: ");
+                        System.out.print("Hours: ");
+                        int hour = sc.nextInt();
+                        System.out.print("Minutes: ");
+                        int minute = sc.nextInt();
+                        if ((minute < 0 || minute >= 60) || (hour < 0 || hour >= 24)) {
+                            System.out.println("Incorrect time value");
                         } else {
-                            System.out.println("Incorrect input. Try again");
-                            time = sc.next();
+                            cinema.addMovie(new Movie(name, new Time(hour, minute)));
                         }
-                    }
-                    int hour = Integer.parseInt(time.substring(0, 2));
-                    System.out.println(hour);
-//                    cinema.addMovie(new Movie(name, new Time(hour, minute)));
-                    break;
-                case 2:
-                case 3:
-                case 4:
-                case 5:
-                case 6:
-                    System.out.println(cinema.showCinemaLibrary());
-                    break;
-                case 0:
-                    value = false;
-                    break;
-                default:
-                    System.out.println("Undefined operation");
+                        break;
+                    case 2:
+                        System.out.print("Enter movie name: ");
+                        String movieName = sc.nextLine();
+                        if (cinema.getMoviesLibrary().stream().noneMatch(movie -> movie.getTitle().equals(movieName))) {
+                            System.out.println("Library hasn't such movie");
+                            break;
+                        }
+                        Movie currentMovie = cinema.getMoviesLibrary().stream()
+                                .filter(movie -> movie.getTitle().equals(movieName))
+                                .findFirst().get();
+                        System.out.println("Enter start time: ");
+                        System.out.print("Hours: ");
+                        int startHour = sc.nextInt();
+                        System.out.print("Minutes: ");
+                        int startMinute = sc.nextInt();
+                        sc.nextLine();
+                        System.out.print("Day: ");
+                        String day = sc.next();
+                        while (true) {
+                            boolean limiter = false;
+                            for (Days days : Days.values()) {
+                                if (days.toString().equals(day.toUpperCase())) {
+                                    limiter = true;
+                                }
+                            }
+                            if (limiter) {
+                                break;
+                            } else {
+                                System.out.println("Undefined day. Try again");
+                                day = sc.next();
+                            }
+                        }
+                        cinema.addSeance(new Seance(currentMovie, new Time(startHour, startMinute)), day);
+                        break;
+                    case 3:
+                        System.out.print("Enter movie name: ");
+                        String movieName2 = sc.nextLine();
+                        if (cinema.getMoviesLibrary().stream().noneMatch(movie -> movie.getTitle().equals(movieName2))) {
+                            System.out.println("Library hasn't such movie");
+                            break;
+                        }
+                        Movie currentMovie2 = cinema.getMoviesLibrary().stream()
+                                .filter(movie -> movie.getTitle().equals(movieName2))
+                                .findFirst().get();
+                        cinema.removeMovie(currentMovie2);
+                        break;
+                    case 4:
+                        System.out.print("Enter movie name: ");
+                        String movieName3 = sc.nextLine();
+                        if (cinema.getMoviesLibrary().stream().noneMatch(movie -> movie.getTitle().equals(movieName3))) {
+                            System.out.println("Library hasn't such movie");
+                            break;
+                        }
+                        Movie currentMovie3 = cinema.getMoviesLibrary().stream()
+                                .filter(movie -> movie.getTitle().equals(movieName3))
+                                .findFirst().get();
+                        System.out.println("Enter start time: ");
+                        System.out.print("Hours: ");
+                        int startHour3 = sc.nextInt();
+                        System.out.print("Minutes: ");
+                        int startMinute3 = sc.nextInt();
+                        sc.nextLine();
+                        System.out.print("Day: ");
+                        String day3 = sc.next();
+                        while (true) {
+                            boolean limiter = false;
+                            for (Days days : Days.values()) {
+                                if (days.toString().equals(day3.toUpperCase())) {
+                                    limiter = true;
+                                }
+                            }
+                            if (limiter) {
+                                break;
+                            } else {
+                                System.out.println("Undefined day. Try again");
+                                day3 = sc.next();
+                            }
+                        }
+                        cinema.removeSeance(new Seance(currentMovie3, new Time(startHour3, startMinute3)), day3);
+                        break;
+                    case 5:
+                        System.out.println(cinema.toString());
+                        break;
+                    case 6:
+                        System.out.println(cinema.showCinemaLibrary());
+                        break;
+                    case 0:
+                        value = false;
+                        break;
+                    default:
+                        System.out.println("Undefined operation");
+                }
+            } catch (Exception e) {
+                System.out.println("Incorrect input...");
+                sc.nextLine();
             }
             System.out.println("=============================");
         }

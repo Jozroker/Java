@@ -1,5 +1,7 @@
 package mainPackage.core24.lesson;
 
+import java.util.Objects;
+
 public class Seance implements Comparable<Seance>{
 
     private Movie movie;
@@ -21,6 +23,20 @@ public class Seance implements Comparable<Seance>{
         }
         movieDurationHour += startTime.getHour();
         this.endTime = new Time(movieDurationHour, movieDurationMinute);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Seance seance = (Seance) o;
+        return Objects.equals(movie, seance.movie) &&
+                Objects.equals(startTime, seance.startTime);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(movie, startTime);
     }
 
     @Override
