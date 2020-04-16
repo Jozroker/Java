@@ -12,19 +12,19 @@ public class App {
         System.out.println("Input quantity array values");
         int quantity = sc.nextInt();
         Integer[] integers = new Integer[quantity];
-        for (int i = 0; i < integers.length; i++){
+        for (int i = 0; i < integers.length; i++) {
             integers[i] = rd.nextInt(100);
         }
         Integer[] integers2 = integers.clone();
 
-        while(value){
+        while (value) {
             value = false;
-            for (int j = 0; j < integers2.length-1; j++) {
-                if (integers2[j] < integers2[j+1]) {
+            for (int j = 0; j < integers2.length - 1; j++) {
+                if (integers2[j] < integers2[j + 1]) {
                     value = true;
                     int temp = integers2[j];
-                    integers2[j] = integers2[j+1];
-                    integers2[j+1] = temp;
+                    integers2[j] = integers2[j + 1];
+                    integers2[j + 1] = temp;
                 }
             }
 
