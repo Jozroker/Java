@@ -18,7 +18,7 @@ public class Month {
     private Season season;
     private String month;
 
-    public Month(int day, String month, Season season){
+    public Month(int day, String month, Season season) {
         this.day = day;
         this.season = season;
         this.month = month;

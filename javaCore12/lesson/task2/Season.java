@@ -8,7 +8,7 @@ public class Season {
 
     private String season;
 
-    public Season (String season) {
+    public Season(String season) {
         this.season = season;
     }
 

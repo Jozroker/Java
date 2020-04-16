@@ -1,6 +1,5 @@
 package mainPackage.javaCore12.lesson.task3;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class MyArrayList {
@@ -43,7 +42,7 @@ public class MyArrayList {
         }
     }
 
-    public Object get(int i){
+    public Object get(int i) {
         return this.objectArray[i];
     }
 

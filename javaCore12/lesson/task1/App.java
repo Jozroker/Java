@@ -1,6 +1,9 @@
 package mainPackage.javaCore12.lesson.task1;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.Random;
+import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
@@ -17,12 +20,12 @@ public class App {
         ArrayList<ArrayList<Auto>> autos = new ArrayList<>();
         for (int i = 0; i < one; i++) {
             ArrayList<Auto> autos2 = new ArrayList<Auto>();
-            for (int j = 0; j <two; j++) {
-                autos2.add(new Auto(random.nextInt(600) + 400, random.nextInt(20) + 2000, random.nextDouble() * 10, materials.get(random.nextInt(materials.size()-1)), random.nextInt(4) + 4));
+            for (int j = 0; j < two; j++) {
+                autos2.add(new Auto(random.nextInt(600) + 400, random.nextInt(20) + 2000, random.nextDouble() * 10, materials.get(random.nextInt(materials.size() - 1)), random.nextInt(4) + 4));
             }
             autos.add(autos2);
         }
-        while(state) {
+        while (state) {
             System.out.println("0 - Output autos array");
             System.out.println("1 - Set similar value for all cars");
             System.out.println("2 - Add helm material");
@@ -31,8 +34,8 @@ public class App {
             int value = sc.nextInt();
             switch (value) {
                 case 0:
-                    for (int a = 0; a < one-1; a++) {
-                        for (int b = 0; b < two-1; b++) {
+                    for (int a = 0; a < one - 1; a++) {
+                        for (int b = 0; b < two - 1; b++) {
                             System.out.println(autos.get(a).get(b));
                         }
                     }
@@ -49,8 +52,8 @@ public class App {
                         case 0:
                             System.out.print("Input horses power: ");
                             int hp = sc.nextInt();
-                            for (int i = 0; i < one-1; i++) {
-                                for (int j = 0; j < two-1; j++) {
+                            for (int i = 0; i < one - 1; i++) {
+                                for (int j = 0; j < two - 1; j++) {
                                     autos.get(i).get(j).setHorsesPower(hp);
                                 }
                             }
@@ -58,8 +61,8 @@ public class App {
                         case 1:
                             System.out.print("Input autos year: ");
                             int year = sc.nextInt();
-                            for (int i = 0; i < one-1; i++) {
-                                for (int j = 0; j < two-1; j++) {
+                            for (int i = 0; i < one - 1; i++) {
+                                for (int j = 0; j < two - 1; j++) {
                                     autos.get(i).get(j).setYear(year);
                                 }
                             }
@@ -83,8 +86,8 @@ public class App {
                             System.out.print("Input helm material: ");
                             String mt = sc2.nextLine();
                             if (materials.contains(mt)) {
-                                for (int i = 0; i < one-1; i++) {
-                                    for (int j = 0; j < two-1; j++) {
+                                for (int i = 0; i < one - 1; i++) {
+                                    for (int j = 0; j < two - 1; j++) {
                                         autos.get(i).get(j).setHelmMaterial(mt);
                                     }
                                 }
@@ -95,8 +98,8 @@ public class App {
                         case 4:
                             System.out.print("Input cylinders quantity: ");
                             int cq = sc.nextInt();
-                            for (int i = 0; i < one-1; i++) {
-                                for (int j = 0; j < two-1; j++) {
+                            for (int i = 0; i < one - 1; i++) {
+                                for (int j = 0; j < two - 1; j++) {
                                     autos.get(i).get(j).setEngineCylinderQuantity(cq);
                                 }
                             }
@@ -117,8 +120,8 @@ public class App {
                     autos.clear();
                     for (int i = 0; i < one; i++) {
                         ArrayList<Auto> autos2 = new ArrayList<Auto>();
-                        for (int j = 0; j <two; j++) {
-                            autos2.add(new Auto(random.nextInt(600) + 400, random.nextInt(20) + 2000, random.nextDouble() * 10, materials.get(random.nextInt(materials.size()-1)), random.nextInt(4) + 4));
+                        for (int j = 0; j < two; j++) {
+                            autos2.add(new Auto(random.nextInt(600) + 400, random.nextInt(20) + 2000, random.nextDouble() * 10, materials.get(random.nextInt(materials.size() - 1)), random.nextInt(4) + 4));
                         }
                         autos.add(autos2);
                     }

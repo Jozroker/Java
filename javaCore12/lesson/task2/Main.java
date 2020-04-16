@@ -1,6 +1,8 @@
 package mainPackage.javaCore12.lesson.task2;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -40,7 +42,7 @@ public class Main {
         System.out.println("Check this month to pair quantity of days - press 10");
         System.out.println("Quit - press 11");
 
-        while(value){
+        while (value) {
 
             int press = sc.nextInt();
             try {
@@ -230,7 +232,7 @@ public class Main {
                 }
             } catch (WrongInputConsoleParametersException e) {
                 e.getMessage();
-            } catch (UndefinedMonth e){
+            } catch (UndefinedMonth e) {
                 e.getMessage();
             }
         }
