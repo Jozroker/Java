@@ -2,9 +2,9 @@ package mainPackage.core21.lesson.task1;
 
 public class Person {
 
-    @WriteToFile(type=("first name"))
+    @WriteToFile(type = ("first name"))
     private String firstName;
-    @WriteToFile(type=("last name"))
+    @WriteToFile(type = ("last name"))
     private String lastName;
     private int age;
 
