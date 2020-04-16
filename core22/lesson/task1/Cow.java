@@ -1,6 +1,6 @@
 package mainPackage.core22.lesson.task1;
 
-public class Cow implements Pet{
+public class Cow implements Pet {
 
     @Override
     public void voice() {

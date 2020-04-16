@@ -12,7 +12,8 @@ public class Main {
         methods.forEach(method -> {
             try {
                 Amphibia.class.getMethod(method.getName()).invoke(frog);
-            } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException ignore) {}
+            } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException ignore) {
+            }
         });
     }
 }

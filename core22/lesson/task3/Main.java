@@ -1,13 +1,6 @@
 package mainPackage.core22.lesson.task3;
 
-import java.util.Scanner;
-import java.util.stream.Stream;
-
 public class Main {
-
-    private interface ValueGetter {
-        void clas(Class clas);
-    }
 
     public static void main(String[] args) {
         ValueGetter getter = clas -> {
@@ -22,5 +15,9 @@ public class Main {
         getter.clas(Float.class);
         getter.clas(Double.class);
 
+    }
+
+    private interface ValueGetter {
+        void clas(Class clas);
     }
 }
