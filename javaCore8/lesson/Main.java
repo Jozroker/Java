@@ -1,5 +1,7 @@
 package mainPackage.javaCore8.lesson;
+
 import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -20,22 +22,22 @@ public class Main {
         System.out.println("Quit - press 11");
 
 
-        while(value){
+        while (value) {
 
             int press = sc.nextInt();
-            if (press < 0 || press > 11){
+            if (press < 0 || press > 11) {
                 System.out.println("Error! Undefined value. Enter correct number");
             } else {
-                switch (press){
+                switch (press) {
                     case 0:
                         String selectedMonth = sc.next().toUpperCase();
-                        for (int i = 0; i < Month.values().length; i++){
-                            if (selectedMonth.equals(Month.values()[i].name())){
+                        for (int i = 0; i < Month.values().length; i++) {
+                            if (selectedMonth.equals(Month.values()[i].name())) {
                                 month = Month.valueOf(selectedMonth);
                                 break;
                             }
                         }
-                        if (month == null){
+                        if (month == null) {
                             System.out.println("Error! Undefined month value. Enter correct month");
                         } else {
                             System.out.println("Selected month = " + month.name());
@@ -45,13 +47,13 @@ public class Main {
                     case 1:
                         String enteredMonth = sc.next().toUpperCase();
                         boolean temp = false;
-                        for (int i = 0; i < Month.values().length; i++){
-                            if (enteredMonth.equals(Month.values()[i].name())){
+                        for (int i = 0; i < Month.values().length; i++) {
+                            if (enteredMonth.equals(Month.values()[i].name())) {
                                 temp = true;
                                 break;
                             }
                         }
-                        if (temp){
+                        if (temp) {
                             System.out.println("Month " + enteredMonth + " exist");
                         } else {
                             System.out.println("Month " + enteredMonth + " not exist");
@@ -59,14 +61,14 @@ public class Main {
                         System.out.println("-----");
                         break;
                     case 2:
-                        if (month == null){
+                        if (month == null) {
                             System.out.println("Error! Month not selectet");
                         } else {
-                        Season selectedSeason = month.getSeason();
-                        System.out.print("Months with same season: ");
-                        for (int i = 0; i < Month.values().length; i++) {
-                            if (Month.values()[i].getSeason() == selectedSeason) {
-                                System.out.print(Month.values()[i] + " ");
+                            Season selectedSeason = month.getSeason();
+                            System.out.print("Months with same season: ");
+                            for (int i = 0; i < Month.values().length; i++) {
+                                if (Month.values()[i].getSeason() == selectedSeason) {
+                                    System.out.print(Month.values()[i] + " ");
                                 }
                             }
                         }
@@ -74,7 +76,7 @@ public class Main {
                         System.out.println("-----");
                         break;
                     case 3:
-                        if (month == null){
+                        if (month == null) {
                             System.out.println("Error! Month not selectet");
                         } else {
                             int dayQuantity = month.getDay();
@@ -89,7 +91,7 @@ public class Main {
                         System.out.println("-----");
                         break;
                     case 4:
-                        if (month == null){
+                        if (month == null) {
                             System.out.println("Error! Month not selectet");
                         } else {
                             int dayQuantity = month.getDay();
@@ -100,7 +102,7 @@ public class Main {
                                     less.append(Month.values()[i]).append(" ");
                                 }
                             }
-                            if (less.toString().equals(lessQuantity)){
+                            if (less.toString().equals(lessQuantity)) {
                                 System.out.println("No months with less quantity of days");
                             } else {
                                 System.out.println(less);
@@ -109,7 +111,7 @@ public class Main {
                         System.out.println("-----");
                         break;
                     case 5:
-                        if (month == null){
+                        if (month == null) {
                             System.out.println("Error! Month not selectet");
                         } else {
                             int dayQuantity = month.getDay();
@@ -120,7 +122,7 @@ public class Main {
                                     more.append(Month.values()[i]).append(" ");
                                 }
                             }
-                            if (more.toString().equals(moreQuantity)){
+                            if (more.toString().equals(moreQuantity)) {
                                 System.out.println("No months with more quantity of days");
                             } else {
                                 System.out.println(more);
@@ -129,13 +131,13 @@ public class Main {
                         System.out.println("-----");
                         break;
                     case 6:
-                        if (month == null){
+                        if (month == null) {
                             System.out.println("Error! Month not selectet");
                         } else {
                             Season season = month.getSeason();
-                            for (int i = 0; i < Month.values().length; i++){
-                                if (Month.values()[i].getSeason() == season){
-                                    System.out.println("Next season is: "+Month.values()[i+3].getSeason());
+                            for (int i = 0; i < Month.values().length; i++) {
+                                if (Month.values()[i].getSeason() == season) {
+                                    System.out.println("Next season is: " + Month.values()[i + 3].getSeason());
                                     break;
                                 }
                             }
@@ -143,17 +145,17 @@ public class Main {
                         System.out.println("-----");
                         break;
                     case 7:
-                        if (month == null){
+                        if (month == null) {
                             System.out.println("Error! Month not selectet");
                         } else {
                             Season season = month.getSeason();
                             int count = 0;
-                            for (int i = 0; i < Month.values().length; i++){
-                                if (Month.values()[i].getSeason() == season){
+                            for (int i = 0; i < Month.values().length; i++) {
+                                if (Month.values()[i].getSeason() == season) {
                                     count++;
                                 }
-                                if (count == 3){
-                                    System.out.println("Previous season is: "+Month.values()[i-3].getSeason());
+                                if (count == 3) {
+                                    System.out.println("Previous season is: " + Month.values()[i - 3].getSeason());
                                     break;
                                 }
                             }
@@ -162,9 +164,9 @@ public class Main {
                         break;
                     case 8:
                         System.out.print("Months with pair quantity of days: ");
-                        for (int i = 0; i < Month.values().length; i++){
-                            if (Month.values()[i].getDay() % 2 == 0){
-                                System.out.print(Month.values()[i]+" ");
+                        for (int i = 0; i < Month.values().length; i++) {
+                            if (Month.values()[i].getDay() % 2 == 0) {
+                                System.out.print(Month.values()[i] + " ");
                             }
                         }
                         System.out.println();
@@ -172,19 +174,19 @@ public class Main {
                         break;
                     case 9:
                         System.out.print("Months with not pair quantity of days: ");
-                        for (int i = 0; i < Month.values().length; i++){
-                            if (Month.values()[i].getDay() % 2 != 0){
-                                System.out.print(Month.values()[i]+" ");
+                        for (int i = 0; i < Month.values().length; i++) {
+                            if (Month.values()[i].getDay() % 2 != 0) {
+                                System.out.print(Month.values()[i] + " ");
                             }
                         }
                         System.out.println();
                         System.out.println("-----");
                         break;
                     case 10:
-                        if (month == null){
+                        if (month == null) {
                             System.out.println("Error! Month not selectet");
                         } else {
-                            if (month.getDay() % 2 == 0){
+                            if (month.getDay() % 2 == 0) {
                                 System.out.println("Month " + month.name() + " nave pair quantity of days: " + month.getDay());
                             } else {
                                 System.out.println("Month " + month.name() + " nave not pair quantity of days: " + month.getDay());

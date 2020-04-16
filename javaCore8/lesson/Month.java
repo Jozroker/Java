@@ -17,7 +17,7 @@ public enum Month {
     private int day;
     private Season season;
 
-    private Month(int day, Season season){
+    Month(int day, Season season) {
         this.day = day;
         this.season = season;
     }
