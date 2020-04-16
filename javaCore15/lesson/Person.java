@@ -1,6 +1,5 @@
 package mainPackage.javaCore15.lesson;
 
-import java.util.ArrayList;
 import java.util.Objects;
 
 public class Person {

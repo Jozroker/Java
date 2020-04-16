@@ -1,8 +1,10 @@
 package mainPackage.javaCore15.lesson;
 
 
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
 
 public class ZooClub {
     private Map<Person, List<Pet>> map;
