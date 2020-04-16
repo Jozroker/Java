@@ -34,14 +34,14 @@ public class Cinema {
             if (key.toString().equals(day.toUpperCase())) {
                 TimeComparator tc = new TimeComparator();
                 if (value.getSeances().stream().noneMatch(seance ->
-                                (((tc.compare(currentSeance.getStartTime(), seance.getStartTime()) >= 0) &&
-                                        (tc.compare(currentSeance.getStartTime(), seance.getEndTime()) <= 0)) ||
-                                        ((tc.compare(currentSeance.getEndTime(), seance.getStartTime()) >= 0) &&
+                        (((tc.compare(currentSeance.getStartTime(), seance.getStartTime()) >= 0) &&
+                                (tc.compare(currentSeance.getStartTime(), seance.getEndTime()) <= 0)) ||
+                                ((tc.compare(currentSeance.getEndTime(), seance.getStartTime()) >= 0) &&
                                         (tc.compare(currentSeance.getEndTime(), seance.getEndTime()) <= 0))))) {
                     if (tc.compare(currentSeance.getStartTime(), open) > 0 &&
                             tc.compare(currentSeance.getEndTime(), close) < 0) {
                         System.out.println("Cinema will be closed");
-                    } else  {
+                    } else {
                         value.addSeance(currentSeance);
                     }
                 } else {
@@ -81,8 +81,8 @@ public class Cinema {
                     .entrySet()
                     .stream()
                     .map(elem -> {
-                return "        " + elem.getKey().toString() + "-> Schedule: " + elem.getValue().toString();
-            })
+                        return "        " + elem.getKey().toString() + "-> Schedule: " + elem.getValue().toString();
+                    })
                     .collect(Collectors.joining("\n")) +
                     ",\nopen=" + open.toString() +
                     ",\nclose=" + close.toString() +

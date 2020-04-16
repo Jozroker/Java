@@ -2,7 +2,7 @@ package mainPackage.core24.lesson;
 
 import java.util.Objects;
 
-public class Seance implements Comparable<Seance>{
+public class Seance implements Comparable<Seance> {
 
     private Movie movie;
     private Time startTime;

@@ -1,16 +1,13 @@
 package mainPackage.core24.lesson;
 
-import java.text.DecimalFormat;
-import java.util.Optional;
 import java.util.Scanner;
-import java.util.regex.Pattern;
 
 public class Main {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 //        DecimalFormat twoNumbers = new DecimalFormat("00");
-        Cinema cinema = new Cinema(new Time(9, 0), new Time(0,0));
+        Cinema cinema = new Cinema(new Time(9, 0), new Time(0, 0));
         System.out.println("1 - Add new movie to library");
         System.out.println("2 - Add new seance");
         System.out.println("3 - Remove movie from cinema");
