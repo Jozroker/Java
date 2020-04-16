@@ -1,7 +1,5 @@
 package mainPackage.javaCore14.lesson.task2;
 
-import javax.naming.Name;
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class Main {
@@ -21,7 +19,7 @@ public class Main {
         System.out.println("9 - View products");
         System.out.println("0 - Exit");
 
-        while(true) {
+        while (true) {
             try {
                 System.out.print("Choose action: ");
                 switch (sc.nextInt()) {
