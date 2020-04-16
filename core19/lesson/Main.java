@@ -1,6 +1,6 @@
 package mainPackage.core19.lesson;
 
-import java.io.*;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
