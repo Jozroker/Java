@@ -15,11 +15,11 @@ public class App {
         int two = random.nextInt(9) + 1;
         Auto[][] autos = new Auto[one][two];
         for (int i = 0; i < one; i++) {
-            for (int j = 0; j <two; j++) {
+            for (int j = 0; j < two; j++) {
                 autos[i][j] = new Auto(random.nextInt(600) + 400, random.nextInt(20) + 2000, random.nextDouble() * 10, materials[random.nextInt(3)], random.nextInt(4) + 4);
             }
         }
-        while(state) {
+        while (state) {
             System.out.println("0 - Output autos array");
             System.out.println("1 - Set similar value for all cars");
             System.out.println("2 - Quit");
