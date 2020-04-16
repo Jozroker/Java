@@ -1,6 +1,6 @@
 package mainPackage.core16.lesson;
 
-public class Pitbul extends Dog implements Animal{
+public class Pitbul extends Dog implements Animal {
 
     private String color;
 
