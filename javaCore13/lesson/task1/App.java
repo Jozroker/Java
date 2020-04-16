@@ -1,8 +1,6 @@
 package mainPackage.javaCore13.lesson.task1;
 
 import java.util.InputMismatchException;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Scanner;
 
 public class App {
@@ -23,7 +21,7 @@ public class App {
         System.out.println("9 - View biggest briber");
         System.out.println("10 - Add bribe");
         System.out.println("0 - Exit");
-        while(bool) {
+        while (bool) {
             try {
                 switch (sc.nextInt()) {
                     case 0:

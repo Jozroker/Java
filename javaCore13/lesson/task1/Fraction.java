@@ -1,6 +1,9 @@
 package mainPackage.javaCore13.lesson.task1;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Scanner;
 
 public class Fraction {
 
@@ -13,7 +16,7 @@ public class Fraction {
         this.name = name;
     }
 
-    public void addDelegate(){
+    public void addDelegate() {
         System.out.print("Input first name: ");
         String fname = sc.next();
         System.out.print("Input last name: ");
@@ -48,7 +51,7 @@ public class Fraction {
                 countBribers++;
             }
         }
-        if(countBribers == 0) {
+        if (countBribers == 0) {
             System.out.println("This Fraction have any bribers");
         }
         System.out.println();
@@ -62,7 +65,7 @@ public class Fraction {
         while (iter.hasNext()) {
             Delegate currentDelegate = iter.next();
             if (currentDelegate.isBriber() &&
-                currentDelegate.getBribeSize() > bribe) {
+                    currentDelegate.getBribeSize() > bribe) {
                 biggestBriber = currentDelegate;
             }
         }
@@ -73,7 +76,7 @@ public class Fraction {
         System.out.println("Fraction name: " + name);
         System.out.println("Delegations: ");
         Iterator<Delegate> iter = MyIterator.createIterator(delegates);
-        while (iter.hasNext()){
+        while (iter.hasNext()) {
             System.out.println(iter.next().toString());
         }
     }

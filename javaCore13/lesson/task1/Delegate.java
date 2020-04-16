@@ -3,12 +3,12 @@ package mainPackage.javaCore13.lesson.task1;
 import java.util.Scanner;
 
 public class Delegate extends People {
+    Scanner sc = new Scanner(System.in);
     private String firstName;
     private String lastName;
     private int age;
     private boolean briber;
     private double bribeSize;
-    Scanner sc = new Scanner(System.in);
 
     public Delegate(String firstName, String lastName, int weight, int length, int age, boolean briber) {
         super(weight, length);
@@ -16,14 +16,14 @@ public class Delegate extends People {
         this.lastName = lastName;
         this.age = age;
         this.briber = briber;
-        if(briber) {
+        if (briber) {
             System.out.print("Input bribe size: ");
             double bribeSize = sc.nextDouble();
             this.addBribe(bribeSize);
         }
     }
 
-    public void addBribe(double bribeSize){
+    public void addBribe(double bribeSize) {
         if (this.briber) {
             if (bribeSize > 5000) {
                 System.out.println("Police imprison delegate");
@@ -57,8 +57,8 @@ public class Delegate extends People {
 
     @Override
     public String toString() {
-        if(this.briber) {
-            return  "\n     Delegate{" +
+        if (this.briber) {
+            return "\n     Delegate{" +
                     "firstName='" + firstName + '\'' +
                     ", lastName='" + lastName + '\'' +
                     ", age=" + age +
@@ -66,7 +66,7 @@ public class Delegate extends People {
                     ", bribeSize=" + bribeSize +
                     '}';
         } else {
-            return  "\n     Delegate{" +
+            return "\n     Delegate{" +
                     "firstName='" + firstName + '\'' +
                     ", lastName='" + lastName + '\'' +
                     ", age=" + age +

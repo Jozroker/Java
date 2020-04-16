@@ -40,9 +40,9 @@ public class Singleton {
         String fname = sc.next();
         System.out.print("Enter delegate last name: ");
         String lname = sc.next();
-        for(Fraction elem : fractions) {
-            for(Delegate elem2 : elem.getDelegates()) {
-                if(elem2.getFirstName().equals(fname) && elem2.getLastName().equals(lname)) {
+        for (Fraction elem : fractions) {
+            for (Delegate elem2 : elem.getDelegates()) {
+                if (elem2.getFirstName().equals(fname) && elem2.getLastName().equals(lname)) {
                     elem2.addBribe(count);
                 }
             }
@@ -72,7 +72,7 @@ public class Singleton {
     public void viewBribers() {
         System.out.println("List of bribers: ");
         Iterator<Fraction> iter = fractions.iterator();
-        while(iter.hasNext()) {
+        while (iter.hasNext()) {
             Fraction currentFraction = iter.next();
             System.out.println("Fraction: " + currentFraction.getName());
             currentFraction.viewBribers();
@@ -82,10 +82,10 @@ public class Singleton {
     public void viewBiggestBriber() {
         Delegate biggestBriber = null;
         double count = 0;
-        for(Fraction elem : fractions) {
-            for(Delegate elem2 : elem.getDelegates()) {
-                if(elem2.isBriber()) {
-                    if(elem2.getBribeSize() > count) {
+        for (Fraction elem : fractions) {
+            for (Delegate elem2 : elem.getDelegates()) {
+                if (elem2.isBriber()) {
+                    if (elem2.getBribeSize() > count) {
                         biggestBriber = elem2;
                         count = biggestBriber.getBribeSize();
                     }
@@ -97,9 +97,9 @@ public class Singleton {
 
     public void viewAllDelegates(String nameFraction) {
         Iterator<Fraction> iter = fractions.iterator();
-        while(iter.hasNext()) {
+        while (iter.hasNext()) {
             Fraction currentFraction = iter.next();
-            if(currentFraction.getName().equals(nameFraction)) {
+            if (currentFraction.getName().equals(nameFraction)) {
                 currentFraction.viewFractionDelegates();
             }
         }
@@ -107,9 +107,9 @@ public class Singleton {
 
     public void clearFraction(String nameFraction) {
         Iterator<Fraction> iter = fractions.iterator();
-        while(iter.hasNext()) {
+        while (iter.hasNext()) {
             Fraction currentFraction = iter.next();
-            if(currentFraction.getName().equals(nameFraction)) {
+            if (currentFraction.getName().equals(nameFraction)) {
                 currentFraction.clearFraction();
             }
         }
