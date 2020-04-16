@@ -16,7 +16,7 @@ public class Main {
             Methods.subtraction(a, b);
             Methods.multiply(a, b);
             Methods.devide(a, b);
-        } catch (MyException | ArithmeticException | IllegalArgumentException e){
+        } catch (MyException | ArithmeticException | IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
 
