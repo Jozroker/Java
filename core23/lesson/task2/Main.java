@@ -1,7 +1,5 @@
 package mainPackage.core23.lesson.task2;
 
-import mainPackage.core23.lesson.task1.DelegateCouncilSingleton;
-
 import java.util.Scanner;
 
 public class Main {

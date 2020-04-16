@@ -80,7 +80,7 @@ public class DelegateCouncilSingleton {
     }
 
     public void showAllBribers() {
-        council.forEach(fraction ->  {
+        council.forEach(fraction -> {
             System.out.println("Fraction: " + fraction.getName());
             fraction.showAllBribers();
         });

@@ -17,7 +17,7 @@ public class Main {
         System.out.println("9 - Show the biggest briber");
         System.out.println("0 - Exit");
         boolean value = true;
-        while(value) {
+        while (value) {
             System.out.print("Enter action number: ");
             int count = sc.nextInt();
             switch (count) {

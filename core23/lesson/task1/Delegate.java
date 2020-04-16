@@ -2,7 +2,7 @@ package mainPackage.core23.lesson.task1;
 
 import java.util.Scanner;
 
-public class Delegate extends People{
+public class Delegate extends People {
 
     private String firstname;
     private String lastname;

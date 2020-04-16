@@ -1,7 +1,5 @@
 package mainPackage.core23.lesson.task2;
 
-import java.util.Objects;
-
 public class Person {
 
     private String name;

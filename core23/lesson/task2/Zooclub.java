@@ -65,7 +65,7 @@ public class Zooclub {
                         System.out.println("This member hasn't such pet");
                     }
                 }
-                    });
+            });
         } else {
             System.out.println("Zooclub hasn't such member");
         }
