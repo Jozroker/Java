@@ -9,11 +9,11 @@ public class App {
         System.out.print("Enter word: ");
         try {
             String word = sc.nextLine();
-            if (word.length() != 5){
+            if (word.length() != 5) {
                 throw new WordLengthException("Word length not correct! Enter word from 5 chars");
             }
             if (word.toLowerCase().charAt(0) == word.toLowerCase().charAt(4)
-                && word.toLowerCase().charAt(1) == word.toLowerCase().charAt(3)) {
+                    && word.toLowerCase().charAt(1) == word.toLowerCase().charAt(3)) {
                 System.out.println("This word is polindrome");
             } else {
                 System.out.println("This word isn't polindrome");

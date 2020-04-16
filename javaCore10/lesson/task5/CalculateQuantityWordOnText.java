@@ -8,7 +8,7 @@ public class CalculateQuantityWordOnText {
             if (text.charAt(i) == ' ') {
                 count++;
             }
-            if (text.charAt(i) == '-'){
+            if (text.charAt(i) == '-') {
                 count--;
             }
         }
