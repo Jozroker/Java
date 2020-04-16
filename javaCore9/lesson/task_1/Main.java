@@ -1,7 +1,6 @@
 package mainPackage.javaCore9.lesson.task_1;
 
 import java.util.Scanner;
-import java.util.UnknownFormatConversionException;
 
 public class Main {
     public static void main(String[] args) {
@@ -26,7 +25,7 @@ public class Main {
         System.out.println("Quit - press 11");
 
 
-        while(value){
+        while (value) {
 
             int press = sc.nextInt();
             try {
@@ -206,9 +205,9 @@ public class Main {
                 }
             } catch (WrongInputConsoleParametersException e) {
                 e.getMessage();
-            } catch (UndefinedMonth e){
+            } catch (UndefinedMonth e) {
                 e.getMessage();
-            } catch (Exception e){
+            } catch (Exception e) {
                 e.getMessage();
             }
         }
