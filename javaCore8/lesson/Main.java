@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Month month = null;
-        boolean value = true;
+        boolean isPerformed = true;
 
         System.out.println("Enter month - press 0");
         System.out.println("Check month value - press 1");
@@ -21,9 +21,7 @@ public class Main {
         System.out.println("Check month to pair quantity of days current month - press 10");
         System.out.println("Quit - press 11");
 
-
-        while (value) {
-
+        while (isPerformed) {
             int press = sc.nextInt();
             if (press < 0 || press > 11) {
                 System.out.println("Error! Undefined value. Enter correct number");
@@ -196,12 +194,10 @@ public class Main {
                         break;
                     case 11:
                         System.out.println("End program");
-                        value = false;
+                        isPerformed = false;
                         break;
-
                 }
             }
         }
-
     }
 }
