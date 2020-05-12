@@ -1,33 +1,15 @@
 package mainPackage.javaCore12.lesson.task2;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        Month month = null;
-        boolean value = true;
-        List<Season> seasons = new ArrayList<>();
-        seasons.add(new Season("WINTER"));
-        seasons.add(new Season("SPRING"));
-        seasons.add(new Season("SUMMER"));
-        seasons.add(new Season("OUTUMN"));
 
-        List<Month> months = new ArrayList<>();
-        months.add(new Month(31, "JANUARY", seasons.get(0)));
-        months.add(new Month(29, "FEBRUARY", seasons.get(0)));
-        months.add(new Month(31, "MARCH", seasons.get(1)));
-        months.add(new Month(30, "APRIL", seasons.get(1)));
-        months.add(new Month(31, "MAY", seasons.get(1)));
-        months.add(new Month(30, "JUNE", seasons.get(2)));
-        months.add(new Month(31, "JULY", seasons.get(2)));
-        months.add(new Month(31, "AUGUST", seasons.get(2)));
-        months.add(new Month(30, "SEPTEMBER", seasons.get(3)));
-        months.add(new Month(31, "OCTOBER", seasons.get(3)));
-        months.add(new Month(30, "NOVEMBER", seasons.get(3)));
-        months.add(new Month(31, "DECEMBER", seasons.get(0)));
+    private static Month month = null;
+
+    public static void main(String[] args) {
+
+
+        boolean isPerformed = true;
 
         System.out.println("Enter month - press 0");
         System.out.println("Check month value - press 1");
@@ -42,200 +24,277 @@ public class Main {
         System.out.println("Check this month to pair quantity of days - press 10");
         System.out.println("Quit - press 11");
 
-        while (value) {
-
+        while (isPerformed) {
+            Scanner sc = new Scanner(System.in);
             int press = sc.nextInt();
             try {
                 switch (press) {
                     case 0:
-
                         String selectedMonth = sc.next().toUpperCase();
-                        for (Month item : months) {
-                            if (selectedMonth.equals(item.getMonth())) {
-                                month = item;
-                                break;
-                            }
-                        }
-                        if (month == null) {
-                            throw new UndefinedMonth();
-                        } else {
-                            System.out.println("Selected month = " + month.getMonth());
-                        }
+                        selectMonth(selectedMonth);
+                        System.out.println("Selected month = " + month.name());
+                        System.out.println();
                         System.out.println("-----");
                         break;
                     case 1:
                         String enteredMonth = sc.next().toUpperCase();
-                        boolean temp = false;
-                        for (Month item : months) {
-                            if (enteredMonth.equals(item.getMonth())) {
-                                temp = true;
-                                break;
-                            }
-                        }
-                        if (temp) {
-                            System.out.println("Month " + enteredMonth + " exist");
+                        if (checkMonthValue(enteredMonth)) {
+                            System.out.println("Month " + enteredMonth + " exists");
                         } else {
-                            System.out.println("Month " + enteredMonth + " not exist");
+                            System.out.println("Month " + enteredMonth + " not exists");
                         }
+                        System.out.println();
                         System.out.println("-----");
                         break;
                     case 2:
-                        if (month == null) {
-                            throw new UndefinedMonth();
-                        } else {
-                            Season selectedSeason = month.getSeason();
-                            System.out.print("Months with same season: ");
-                            for (Month item : months) {
-                                if (item.getSeason() == selectedSeason) {
-                                    System.out.print(item.getMonth() + " ");
-                                }
-                            }
-                        }
+                        System.out.print("Months with same season: ");
+                        System.out.println(monthWithSimilarSeason());
                         System.out.println();
                         System.out.println("-----");
                         break;
                     case 3:
-                        if (month == null) {
-                            throw new UndefinedMonth();
-                        } else {
-                            int dayQuantity = month.getDay();
-                            System.out.print("Months with same quantity of days: ");
-                            for (Month item : months) {
-                                if (item.getDay() == dayQuantity) {
-                                    System.out.print(item.getMonth() + " ");
-                                }
-                            }
-                        }
+                        System.out.print("Months with same quantity of days: ");
+                        System.out.print(monthWithSameDaysQty());
                         System.out.println();
                         System.out.println("-----");
                         break;
                     case 4:
-                        if (month == null) {
-                            throw new UndefinedMonth();
-                        } else {
-                            int dayQuantity = month.getDay();
-                            String lessQuantity = "Months with less quantity of days: ";
-                            StringBuilder less = new StringBuilder(lessQuantity);
-                            for (Month item : months) {
-                                if (item.getDay() < dayQuantity) {
-                                    less.append(item.getMonth()).append(" ");
-                                }
-                            }
-                            if (less.toString().equals(lessQuantity)) {
-                                System.out.println("No months with less quantity of days");
-                            } else {
-                                System.out.println(less);
-                            }
-                        }
+                        System.out.println(monthWithLessDaysQty());
+                        System.out.println();
                         System.out.println("-----");
                         break;
                     case 5:
-                        if (month == null) {
-                            throw new UndefinedMonth();
-                        } else {
-                            int dayQuantity = month.getDay();
-                            String moreQuantity = "Months with more quantity of days: ";
-                            StringBuilder more = new StringBuilder(moreQuantity);
-                            for (Month item : months) {
-                                if (item.getDay() > dayQuantity) {
-                                    more.append(item.getMonth()).append(" ");
-                                }
-                            }
-                            if (more.toString().equals(moreQuantity)) {
-                                System.out.println("No months with more quantity of days");
-                            } else {
-                                System.out.println(more);
-                            }
-                        }
+                        System.out.println(monthWithMoreDaysQty());
+                        System.out.println();
                         System.out.println("-----");
                         break;
                     case 6:
-                        if (month == null) {
-                            throw new UndefinedMonth();
-                        } else {
-                            Season season = month.getSeason();
-                            for (Month item : months) {
-                                if (item.getSeason() == season) {
-                                    int tmp = seasons.indexOf(season);
-                                    try {
-                                        System.out.println("Next season is: " + seasons.get(tmp + 1).getSeasonName());
-                                    } catch (IndexOutOfBoundsException e) {
-                                        System.out.println("Next season is: " + seasons.get(0).getSeasonName());
-                                    }
-                                    break;
-                                }
-                            }
-                        }
+                        System.out.println(nextSeason());
+                        System.out.println();
                         System.out.println("-----");
                         break;
                     case 7:
-                        if (month == null) {
-                            throw new UndefinedMonth();
-                        } else {
-                            Season season = month.getSeason();
-                            int count = 0;
-                            for (Month item : months) {
-                                if (item.getSeason() == season) {
-                                    count++;
-                                }
-                                if (count == 3) {
-                                    int tmp = seasons.indexOf(season);
-                                    try {
-                                        System.out.println("Previous season is: " + seasons.get(tmp - 1).getSeasonName());
-                                    } catch (IndexOutOfBoundsException e) {
-                                        System.out.println("Previous season is: " + seasons.get(seasons.size() - 1).getSeasonName());
-                                    }
-                                    break;
-                                }
-                            }
-                        }
+                        System.out.println(previousSeason());
+                        System.out.println();
                         System.out.println("-----");
                         break;
                     case 8:
-                        System.out.print("Months with pair quantity of days: ");
-                        for (Month item : months) {
-                            if (item.getDay() % 2 == 0) {
-                                System.out.print(item.getMonth() + " ");
-                            }
-                        }
+                        System.out.println(monthWithPairDaysQty());
                         System.out.println();
                         System.out.println("-----");
                         break;
                     case 9:
-                        System.out.print("Months with not pair quantity of days: ");
-                        for (Month item : months) {
-                            if (item.getDay() % 2 != 0) {
-                                System.out.print(item.getMonth() + " ");
-                            }
-                        }
+                        System.out.println(monthWithNotPairDaysQty());
                         System.out.println();
                         System.out.println("-----");
                         break;
                     case 10:
-                        if (month == null) {
-                            throw new UndefinedMonth();
-                        } else {
-                            if (month.getDay() % 2 == 0) {
-                                System.out.println("Month " + month.getMonth() + " have pair quantity of days: " + month.getDay());
-                            } else {
-                                System.out.println("Month " + month.getMonth() + " have not pair quantity of days: " + month.getDay());
-                            }
-                        }
+                        System.out.println(checkMonthDaysQty());
                         System.out.println("-----");
                         break;
                     case 11:
                         System.out.println("End program");
-                        value = false;
+                        isPerformed = false;
                         break;
                     default:
                         throw new WrongInputConsoleParametersException();
                 }
-            } catch (WrongInputConsoleParametersException e) {
-                e.getMessage();
-            } catch (UndefinedMonth e) {
-                e.getMessage();
+            } catch (WrongInputConsoleParametersException | UndefinedMonth e) {
+                System.out.println(e.getMessage());
             }
         }
+    }
 
+    private static String checkMonthDaysQty() throws UndefinedMonth {
+        String result = "";
+        if (month == null) {
+            throw new UndefinedMonth();
+        } else {
+            if (month.getDay() % 2 == 0) {
+                result = "Month " + month.name() + " have pair quantity of days: " + month.getDay();
+            } else {
+                result = "Month " + month.name() + " have not pair quantity of days: " + month.getDay();
+            }
+        }
+        return result;
+    }
+
+    private static String monthWithNotPairDaysQty() {
+        StringBuilder sb = new StringBuilder("Months with not pair quantity of days: ");
+        for (Month item : Month.values()) {
+            if (item.getDay() % 2 != 0) {
+                sb.append(item.name() + " ");
+            }
+        }
+        return String.valueOf(sb);
+    }
+
+    private static String monthWithPairDaysQty() {
+        StringBuilder sb = new StringBuilder("Months with pair quantity of days: ");
+        for (Month item : Month.values()) {
+            if (item.getDay() % 2 == 0) {
+                sb.append(item.name() + " ");
+            }
+        }
+        return String.valueOf(sb);
+    }
+
+    private static String previousSeason() throws UndefinedMonth {
+        String result = "";
+        if (month == null) {
+            throw new UndefinedMonth();
+        } else {
+            Season season = month.getSeason();
+            int count = 0;
+            for (Month item : Month.values()) {
+                if (item.getSeason() == season) {
+                    count++;
+                }
+                if (count == 3) {
+                    Season previousSeason = previous(season);
+                    result = "Next season is: " + previousSeason.name();
+                    break;
+                }
+            }
+        }
+        return result;
+    }
+
+    private static String nextSeason() throws UndefinedMonth {
+        String result = "";
+        if (month == null) {
+            throw new UndefinedMonth();
+        } else {
+            Season season = month.getSeason();
+            for (Month item : Month.values()) {
+                if (item.getSeason() == season) {
+                    Season nextSeason = next(season);
+                    result = "Next season is: " + nextSeason.name();
+                    break;
+                }
+            }
+        }
+        return result;
+    }
+
+    private static String monthWithMoreDaysQty() throws UndefinedMonth {
+        StringBuilder more = new StringBuilder();
+        if (month == null) {
+            throw new UndefinedMonth();
+        } else {
+            int dayQuantity = month.getDay();
+            String moreQuantity = "Months with more quantity of days: ";
+            more = new StringBuilder(moreQuantity);
+            for (Month item : Month.values()) {
+                if (item.getDay() > dayQuantity) {
+                    more.append(item.name()).append(" ");
+                }
+            }
+            if (more.toString().equals(moreQuantity)) {
+                more = new StringBuilder("No months with more quantity of days");
+            }
+            return String.valueOf(more);
+        }
+    }
+
+    private static String monthWithLessDaysQty() throws UndefinedMonth {
+        StringBuilder less = new StringBuilder();
+        if (month == null) {
+            throw new UndefinedMonth();
+        } else {
+            int dayQuantity = month.getDay();
+            String lessQuantity = "Months with less quantity of days: ";
+            less = new StringBuilder(lessQuantity);
+            for (Month item : Month.values()) {
+                if (item.getDay() < dayQuantity) {
+                    less.append(item.name()).append(" ");
+                }
+            }
+            if (less.toString().equals(lessQuantity)) {
+                less = new StringBuilder("No months with less quantity of days");
+            }
+        }
+        return String.valueOf(less);
+    }
+
+    private static String monthWithSameDaysQty() throws UndefinedMonth {
+        StringBuilder sb = new StringBuilder();
+        if (month == null) {
+            throw new UndefinedMonth();
+        } else {
+            int dayQuantity = month.getDay();
+            for (Month item : Month.values()) {
+                if (item.getDay() == dayQuantity) {
+                    sb.append(item.name() + " ");
+                }
+            }
+        }
+        return String.valueOf(sb);
+    }
+
+    private static String monthWithSimilarSeason() throws UndefinedMonth {
+        StringBuilder sb = new StringBuilder();
+        if (month == null) {
+            throw new UndefinedMonth();
+        } else {
+            Season selectedSeason = month.getSeason();
+            for (Month item : Month.values()) {
+                if (item.getSeason() == selectedSeason) {
+                    sb.append(item.name() + " ");
+                }
+            }
+        }
+        return String.valueOf(sb);
+    }
+
+    private static void selectMonth(String stringMonth) throws UndefinedMonth {
+        for (Month item : Month.values()) {
+            if (stringMonth.equals(item.name())) {
+                month = item;
+                break;
+            }
+        }
+        if (month == null) {
+            throw new UndefinedMonth();
+        }
+    }
+
+    private static boolean checkMonthValue(String stringMonth) {
+        boolean monthExists = false;
+        for (Month item : Month.values()) {
+            if (stringMonth.equals(item.name())) {
+                monthExists = true;
+                break;
+            }
+        }
+        return monthExists;
+    }
+
+    private static Season next(Season season) {
+        Season nextSeason = null;
+        int position = season.ordinal() + 1;
+        if (position >= Season.values().length) {
+            position = 0;
+        }
+        for (Season item : Season.values()) {
+            if (item.ordinal() == position) {
+                nextSeason = item;
+            }
+        }
+        return nextSeason;
+    }
+
+    private static Season previous(Season season) {
+        Season previousSeason = null;
+        int position = season.ordinal() - 1;
+        if (position < 0) {
+            position = Season.values().length - 1;
+        }
+        for (Season item : Season.values()) {
+            if (item.ordinal() == position) {
+                previousSeason = item;
+            }
+        }
+        return previousSeason;
     }
 }

@@ -1,25 +1,22 @@
 package mainPackage.javaCore12.lesson.task1;
 
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class App {
     public static void main(String[] args) {
         Random random = new Random();
         Scanner sc = new Scanner(System.in);
         boolean state = true;
-        ArrayList<String> materials = new ArrayList<String>();
+        List<String> materials = new ArrayList<>();
         materials.add("leather");
         materials.add("alkantara");
         materials.add("plastmas");
         materials.add("silicon");
         int one = random.nextInt(9) + 1;
         int two = random.nextInt(9) + 1;
-        ArrayList<ArrayList<Auto>> autos = new ArrayList<>();
+        List<List<Auto>> autos = new ArrayList<>();
         for (int i = 0; i < one; i++) {
-            ArrayList<Auto> autos2 = new ArrayList<Auto>();
+            List<Auto> autos2 = new ArrayList<>();
             for (int j = 0; j < two; j++) {
                 autos2.add(new Auto(random.nextInt(600) + 400, random.nextInt(20) + 2000, random.nextDouble() * 10, materials.get(random.nextInt(materials.size() - 1)), random.nextInt(4) + 4));
             }
