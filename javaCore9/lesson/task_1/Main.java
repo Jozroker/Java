@@ -10,7 +10,6 @@ public class Main {
         WrongInputConsoleParametersException inputException = new WrongInputConsoleParametersException();
         UndefinedMonth monthException = new UndefinedMonth();
 
-
         System.out.println("Enter month - press 0");
         System.out.println("Check month value - press 1");
         System.out.println("Return months of similar season - press 2");
@@ -24,14 +23,11 @@ public class Main {
         System.out.println("Check this month to pair quantity of days - press 10");
         System.out.println("Quit - press 11");
 
-
         while (value) {
-
             int press = sc.nextInt();
             try {
                 switch (press) {
                     case 0:
-
                         String selectedMonth = sc.next().toUpperCase();
                         for (int i = 0; i < Month.values().length; i++) {
                             if (selectedMonth.equals(Month.values()[i].name())) {
@@ -203,14 +199,9 @@ public class Main {
                     default:
                         throw inputException;
                 }
-            } catch (WrongInputConsoleParametersException e) {
-                e.getMessage();
-            } catch (UndefinedMonth e) {
-                e.getMessage();
-            } catch (Exception e) {
-                e.getMessage();
+            } catch (WrongInputConsoleParametersException | UndefinedMonth e) {
+                System.out.println(e.getMessage());
             }
         }
-
     }
 }
