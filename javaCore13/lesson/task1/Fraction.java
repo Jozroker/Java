@@ -42,7 +42,7 @@ public class Fraction {
 
     public void viewBribers() {
         System.out.println("Bribers: ");
-        Iterator<Delegate> iter = MyIterator.createIterator(delegates);
+        Iterator<Delegate> iter = delegates.iterator();
         int countBribers = 0;
         while (iter.hasNext()) {
             Delegate currentDelegate = iter.next();
@@ -59,7 +59,7 @@ public class Fraction {
 
     public Delegate viewBiggestBriber() {
         System.out.print("Biggest briber is: ");
-        Iterator<Delegate> iter = MyIterator.createIterator(delegates);
+        Iterator<Delegate> iter = delegates.iterator();
         int bribe = 0;
         Delegate biggestBriber = null;
         while (iter.hasNext()) {
@@ -75,7 +75,7 @@ public class Fraction {
     public void viewFractionDelegates() {
         System.out.println("Fraction name: " + name);
         System.out.println("Delegations: ");
-        Iterator<Delegate> iter = MyIterator.createIterator(delegates);
+        Iterator<Delegate> iter = delegates.iterator();
         while (iter.hasNext()) {
             System.out.println(iter.next().toString());
         }
