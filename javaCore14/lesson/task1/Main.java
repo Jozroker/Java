@@ -13,15 +13,15 @@ public class Main {
         System.out.println(users.toString());
         System.out.println();
 
-        Set<Users> users2 = new TreeSet<Users>(users);
+        Set<Users> users2 = new TreeSet<>(users);
         System.out.println(users2);
         System.out.println();
 
-        AgeComparator uCompAge = new AgeComparator();
-        NameComparator uCompName = new NameComparator();
+        AgeComparator ageComparator = new AgeComparator();
+        NameComparator nameComparator = new NameComparator();
 
         System.out.println("Sorted by age: ");
-        Set<Users> users3 = new TreeSet<>(uCompAge);
+        Set<Users> users3 = new TreeSet<>(ageComparator);
         users3.add(new Users("Jackk", 18));
         users3.add(new Users("Nickk", 25));
         users3.add(new Users("Tomm", 58));
@@ -31,7 +31,7 @@ public class Main {
         System.out.println();
 
         System.out.println("Sorted by name: ");
-        Set<Users> users4 = new TreeSet<>(uCompName);
+        Set<Users> users4 = new TreeSet<>(nameComparator);
         users4.add(new Users("Jackk", 18));
         users4.add(new Users("Nickk", 25));
         users4.add(new Users("Tomm", 58));
@@ -41,7 +41,7 @@ public class Main {
         System.out.println();
 
         System.out.println("Sorted list by age: ");
-        List<Users> users5 = new ArrayList<Users>(users4);
+        List<Users> users5 = new ArrayList<>(users4);
         users5.sort(new AgeComparator());
         System.out.println(users5.toString());
 
