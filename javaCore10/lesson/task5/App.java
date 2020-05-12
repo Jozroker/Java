@@ -1,5 +1,4 @@
 package mainPackage.javaCore10.lesson.task5;
-
 import java.util.Scanner;
 
 public class App {
@@ -9,8 +8,7 @@ public class App {
         String stringText = sc.nextLine();
         stringText = stringText.trim();
         StringBuilder text = new StringBuilder(stringText);
-        FindWord.FindWords(text);
-
-
+        String word = FindWord.findWords(stringText);
+        System.out.println("The most used word(s) is: " + word);
     }
 }
