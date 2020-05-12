@@ -1,17 +1,14 @@
 package mainPackage.javaCore15.lesson;
 
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class ZooClub {
     private Map<Person, List<Pet>> map;
     private Scanner sc = new Scanner(System.in);
 
-    public ZooClub(Map<Person, List<Pet>> map) {
-        this.map = map;
+    public ZooClub() {
+        this.map = new HashMap<>();
     }
 
     public void newClubMember() {

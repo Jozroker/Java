@@ -33,7 +33,7 @@ public class Main {
                 case 1:
                     System.out.print("Enter club name: ");
                     String clubName = sc.next();
-                    clubs.put(clubName, new ZooClub(new HashMap<>()));
+                    clubs.put(clubName, new ZooClub());
                     break;
                 case 2:
                     System.out.print("Choose club: ");
